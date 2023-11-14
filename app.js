@@ -1,7 +1,7 @@
 const express = require("express");
 
+const db = require("./models/index");
 const todosRouter = require("./routes/todos.router");
-
 const app = express();
 
 app.use("/api", express.json(), todosRouter);
