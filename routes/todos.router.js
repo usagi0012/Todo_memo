@@ -72,7 +72,7 @@ router.patch("/todos/:todoId", async (req, res) => {
   const { order, value, done } = req.body;
 
   const currentTodo = await Todo.findById(todoId).exec();
-(!currentTodo) {
+  if (!currentTodo) {
     throw new Error("존재하지 않는 todo 데이터입니다.");
   }
 
